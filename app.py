@@ -90,6 +90,20 @@ def test_page():
     json_data = {'Hello': 'World der!'}
     return jsonify(json_data)
 
+def generateMetrics():
+    return "hello world"
+
+
+@app.route('/metrics')
+def metrics():
+    response = make_response(generateMetrics(), 200)
+    response.mimetype = "text/plain"
+    return response
+
+@app.route('/metrics2')
+def metrics2():
+    return generateMetrics()
+
 @app.route('/contact')
 def contact():
 	return render_template('contact.html')
