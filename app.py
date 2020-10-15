@@ -10,6 +10,11 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
+def index():
+    """Return homepage."""
+    json_data = {'Hello': 'World!'}
+    return jsonify(json_data)
+
 def home_page():
 	return render_template('index.html')
 
