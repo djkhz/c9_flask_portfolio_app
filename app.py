@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 
 @app.route('/test')
-def index():
+def index_test():
     """Return homepage."""
     json_data = {'Hello': 'World der!'}
     return jsonify(json_data)
