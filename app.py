@@ -86,7 +86,7 @@ def python_apps_page():
 
 @app.route('/test')
 def test_page():
-    #"""Return homepage."""
+    """Return homepage."""
     json_data = {'Hello': 'World der!'}
     return jsonify(json_data)
 
