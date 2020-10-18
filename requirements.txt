@@ -1,6 +1,5 @@
-Flask
-flask-sijax
 Flask==0.12
+Flask-Sijax==0.4.1
 Flask-Babel==0.11.2
 Flask-Cors==3.0.2
 Flask-Login==0.4.0
