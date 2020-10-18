@@ -5,7 +5,8 @@ import requests
 import os
 from flask import Flask, jsonify
 from flask import Flask, make_response
-from flask_sijax import Flask, sijax
+#from flask_sijax import sijax
+
 
 app = Flask(__name__)
 
