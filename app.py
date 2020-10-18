@@ -5,10 +5,17 @@ import requests
 import os
 from flask import Flask, jsonify
 from flask import Flask, make_response
+from flask import Flask, redirect, url_for
+import flask_sijax
+#https://gist.github.com/spantaleev/4433109
 #from flask_sijax import sijax
 
 
 app = Flask(__name__)
+
+app.config["SIJAX_STATIC_PATH"] = os.path.join('.', os.path.dirname(__file__), 'static/js/sijax/')
+app.config["SIJAX_JSON_URI"] = '/static/js/sijax/json2.js'
+flask_sijax.Sijax(app)
 
 
 @app.route('/', methods=['GET'])
