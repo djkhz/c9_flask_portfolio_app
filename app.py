@@ -121,6 +121,35 @@ def contact():
 def blog_page():
   return render_template('blog.html')
 
+@app.route("/jax")
+def hello():
+    return "Hello World!<br /><a href='/sijax'>Go to Sijax test</a>"
+
+# Sijax enabled function - notice the `@Sijax.route` decorator
+# used instead of `@app.route` (above).
+@flask_sijax.route(app, "/sijax")
+def hello_sijax():
+    # Sijax handler function receiving 2 arguments from the browser
+    # The first argument (obj_response) is passed automatically
+    # by Sijax (much like Python passes `self` to object methods)
+    def hello_handler(obj_response, hello_from, hello_to):
+        obj_response.alert('Hello from %s to %s' % (hello_from, hello_to))
+        obj_response.css('a', 'color', 'green')
+
+    # Another Sijax handler function which receives no arguments
+    def goodbye_handler(obj_response):
+        obj_response.alert('Goodbye, whoever you are.')
+        obj_response.css('a', 'color', 'red')
+
+    if g.sijax.is_sijax_request:
+        # The request looks like a valid Sijax request
+        # Let's register the handlers and tell Sijax to process it
+        g.sijax.register_callback('say_hello', hello_handler)
+        g.sijax.register_callback('say_goodbye', goodbye_handler)
+        return g.sijax.process_request()
+
+    return render_template('hello.html')
+
 app.run(host=os.getenv('IP', '0.0.0.0'), port = int(os.getenv('PORT', 8080)))
 
 if __name__ == '__main__':
