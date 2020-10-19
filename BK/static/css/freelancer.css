@@ -85,6 +85,7 @@ header .intro-text .name {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 2em;
+  
 }
 header .intro-text .skills {
   font-size: 1.25em;
@@ -97,6 +98,7 @@ header .intro-text .skills {
   }
   header .intro-text .name {
     font-size: 4.75em;
+   
   }
   header .intro-text .skills {
     font-size: 1.75em;
