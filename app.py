@@ -126,10 +126,12 @@ def blog_page():
 @app.route("/jax")
 def hello():
     text = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
+	json_string = json.dumps(text, ensure_ascii=False).encode('utf8')
+	return json_string.decode()
     #return jsonify(text)
     #return Response(json.dumps(js),  mimetype='application/json')
-    test=json.dumps(text)
-    return test
+    #test=json.dumps(text)
+    #return test
 
     #return text #"Hello World!<br /><a href='/sijax'>Go to Sijax test</a>"
 
