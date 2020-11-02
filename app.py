@@ -125,6 +125,8 @@ def blog_page():
 
 @app.route("/jax")
 def hello():
+	txt= ""
+print(word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.")) # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
     return "Hello World!<br /><a href='/sijax'>Go to Sijax test</a>"
 
 # Sijax enabled function - notice the `@Sijax.route` decorator
