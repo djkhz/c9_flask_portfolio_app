@@ -124,9 +124,10 @@ def contact():
 def blog_page():
   return render_template('blog.html')
 
-@app.route("/jax2")
+@app.route("/nlp", methods=['GET'])
 def hellox():
-    test = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
+    sentence= request.args.get('text')
+    test = word_tokenize(sentence)#("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
     #test = json.dumps(test)
     #test = json.loads(test)
 	#https://www.guru99.com/python-json.html
