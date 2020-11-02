@@ -6,6 +6,7 @@ import os
 from flask import Flask, jsonify
 from flask import Flask, make_response
 from flask import Flask, redirect, url_for
+from flask import json
 import flask_sijax
 from laonlp.tokenize import word_tokenize
 
@@ -125,8 +126,10 @@ def blog_page():
 
 @app.route("/jax2")
 def hellox():
-    text = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
-    return json.dumps(text)
+    test = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
+    test = json.dumps(test)
+    return render_template("json.html",test=test)
+    #return json.dumps(text)
 
 @app.route("/jax")
 def hello():
