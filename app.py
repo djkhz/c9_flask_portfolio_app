@@ -128,8 +128,8 @@ def hello():
     text = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
     #return jsonify(text)
     #return Response(json.dumps(js),  mimetype='application/json')
-    test=json.dumps(text))
-    return (test)
+    test=json.dumps(text)
+    return test
 
     #return text #"Hello World!<br /><a href='/sijax'>Go to Sijax test</a>"
 
