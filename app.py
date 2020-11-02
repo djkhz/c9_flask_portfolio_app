@@ -7,7 +7,7 @@ from flask import Flask, jsonify
 from flask import Flask, make_response
 from flask import Flask, redirect, url_for
 import flask_sijax
-from laonlp.tokenize import word_tokenize`
+from laonlp.tokenize import word_tokenize
 
 #https://gist.github.com/spantaleev/4433109
 #from flask_sijax import sijax
