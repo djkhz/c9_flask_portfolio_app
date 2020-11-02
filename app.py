@@ -4,6 +4,7 @@ import pytz # timezone
 import requests
 import os
 from flask import Flask, jsonify
+from flask import Flask, json
 from flask import Flask, make_response
 from flask import Flask, redirect, url_for
 import flask_sijax
@@ -123,10 +124,14 @@ def contact():
 def blog_page():
   return render_template('blog.html')
 
+@app.route("/jax2")
+def hello():
+    text = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
+    return json.dumps(text)
 @app.route("/jax")
 def hello():
     text = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
-    return jsonify(text.decode())
+    return jsonify(text)
 	#json_string = flask.json.dumps(text, ensure_ascii=False).encode('utf8')
 	#return jsonify(json_string.decode())
 	#return json.dumps(text)
