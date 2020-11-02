@@ -126,7 +126,7 @@ def blog_page():
 @app.route("/jax")
 def hello():
     text = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
-	return jsonify(text)
+    return "tet"
 	#json_string = flask.json.dumps(text, ensure_ascii=False).encode('utf8')
 	#return jsonify(json_string.decode())
 	#return json.dumps(text)
