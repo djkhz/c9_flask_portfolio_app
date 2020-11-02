@@ -127,9 +127,11 @@ def blog_page():
 @app.route("/jax2")
 def hellox():
     test = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
-    test = json.dumps(test)
+    #test = json.dumps(test)
+    test = json.loads(test)
+	#https://www.guru99.com/python-json.html
     #test = json.dumps(text, ensure_ascii=False).encode('utf8')
-    return render_template('json.html', test=test.decode())
+    return render_template('json.html', test=test)
     #return json.dumps(text)
 
 @app.route("/jax")
