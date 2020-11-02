@@ -124,9 +124,10 @@ def blog_page():
   return render_template('blog.html')
 
 @app.route("/jax2")
-def hello():
+def hellox():
     text = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
     return json.dumps(text)
+
 @app.route("/jax")
 def hello():
     text = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
