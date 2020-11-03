@@ -141,7 +141,7 @@ def hellox():
         #   print(request.form['text'].split())
           
         #   shop_list = []
-        #   try:
+           try:
         #     for item in request.form['text'].split():
               
         #       shop_list.append(item)
