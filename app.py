@@ -124,7 +124,7 @@ def contact():
 def blog_page():
   return render_template('blog.html')
 
-@app.route("/nlp", methods=['GET'])
+@app.route("/nlp", , methods=['GET','POST'])
 def hellox():
     # sentence= request.args.get('text')
     # test = word_tokenize(sentence)#("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
