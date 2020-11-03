@@ -126,13 +126,34 @@ def blog_page():
 
 @app.route("/nlp", methods=['GET'])
 def hellox():
-    sentence= request.args.get('text')
-    test = word_tokenize(sentence)#("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
+    # sentence= request.args.get('text')
+    # test = word_tokenize(sentence)#("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
     #test = json.dumps(test)
     #test = json.loads(test)
 	#https://www.guru99.com/python-json.html
     #test = json.dumps(text, ensure_ascii=False).encode('utf8')
-    return render_template('json.html', test=test)
+    if request.method == 'GET':
+      return render_template('json.html')
+    elif request.method == 'POST':
+        sentence= request.form['text']
+        test = word_tokenize(sentence)#("ພາສາລາວໃນປັດຈຸບັນ.") # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
+    
+        #   print(request.form['text'].split())
+          
+        #   shop_list = []
+        #   try:
+        #     for item in request.form['text'].split():
+              
+        #       shop_list.append(item)
+
+              
+              
+            #return render_template('json.html', result="\n".join([str(item) for item in shop_list]))
+            return render_template('json.html', test=test)
+          except ValueError:
+            return "Easy now! Let's keep it simple! Just words with a space between them"
+          
+    #return render_template('json.html', test=test)
     #return json.dumps(text)
 
 @app.route("/jax")
